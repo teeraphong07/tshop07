@@ -110,7 +110,6 @@
                                 class="btn btn-warning">
                                     <i class="glyphicon glyphicon-pencil"></i>Edit                     
                                 </a>
-                                
                                 <a href="deleteproduct.php?pid=<?php echo $prd->id?>"
                                 class="btn btn-danger lnkdelete" >
                                     <i class="glyphicon glyphicon-trash"></i>Delete                     
