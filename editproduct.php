@@ -122,6 +122,7 @@
                             <input type="text" name="txtStrock" class="form-control" value="<?php echo $prd->unitInstock; ?>">
                         </div>
                     </div>
+                    
                     <div class="form-group">
                         <label for="name" class="control-label col-md-3">procudt</label>
                         <div class="col-md-9">
@@ -129,11 +130,11 @@
                                 <img src="img/<?php echo $prd->picture?>" alt="">
                             </div>
                             <input type="file" name="filepic" class="form-control-file" accept="image/*">
-                                
                         </div>
                     </div>
+
                     <div class="form-group">
-                        <label for="picture" class="control-label col-md-3">Picture : </label>
+                        <label for="picture" class="control-label col-md-3">Picture : </label>  
                     <div class="col-md-9">
                         <input type="radio" name="rdoType" value="gaminggear" checked required> gaminggear</label>
                         <input type="radio" name="rdoType" value="monitor"> Monitor</label>
@@ -143,6 +144,7 @@
                     <div class="from-group">
                         <div class="col-md-9 col-md-offset-3">
                             <input type="hidden" name="hdnProductId" value="<?php echo $prd->id; ?>">
+                            <input type="hidden" name="hdnProductPic" value="<?php echo $prd->picture; ?>">
                             <button type="summit" class="btn btn-primary">Save</button>
                             <button type="reset" class="btn btn-danger">Reset</button>
                         </div>

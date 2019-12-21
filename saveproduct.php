@@ -19,6 +19,7 @@
         $unitInstock = $_POST['txtStrock'];
         $filename = $_FILES["filepic"]["name"];
         $ctgy = $_POST['rdoType'];
+        
         //echo "Type: ".$_FILES["filepic"]["type"]."<br>";
         //echo "Name: ".$_FILES["filepic"]["name"]."<br>";
         //echo "Size: ".$_FILES["filepic"]["size"]."<br>";
