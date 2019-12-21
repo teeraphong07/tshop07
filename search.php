@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TShop</title>
+    <a href="index.php"><title>TShop</title></a>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
@@ -77,17 +77,29 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        <div class="jumbotron">
-            <h1>TShop</h1>
-            <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quis nemo iure architecto libero doloremque nisi nulla, tempore non necessitatibus.</p>
+        <div class="container">
+            <div class="row">
+                <h2>Search Product</h2>
+                    <div class="col-md-12">
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                <input type="text" class="form-control" name="txtSearch" placeholder="กรอกข้อมูล"></div>
+                                <div class="col-md-2">
+                            <button type="summit" class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                </form>  
+            </div>
         </div>
-    </div>
-    <div class="container">
-        <div class = "row">
-           <h2 class="text-center">Product</h2>
-           <?php  
-                $sql ="SELECT * FROM product ORDER BY id";
+    <?php
+        if(isset($_POST['submit'])){
+            $search = $_POST['txtSearch'];
+            $sql ="SELECT * FROM product WHERE name LIKE '%$search%' ";
+    ?>
+        <div class="row">
+            <div class="col-md-12">
+            <?php  
                 $result = $conn->query($sql);
                 if(!$result){
                     echo "Error during data retrieval";
@@ -123,21 +135,13 @@
                 }
             }
            ?>
+            </div>
         </div>
+    <?php
+        }
+    ?>
     </div>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function(){
-        });
-        $(".lnkdelete").click(function(){
-            if(confirm("Confirm Delete?")){
-                return true;
-            }
-            else{
-            return false;
-            }
-        });
-    </script>
 </body>
 </html>
